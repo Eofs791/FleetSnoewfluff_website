@@ -3,7 +3,7 @@ import { loaderTrigger } from "./loader";
 let isLocked = false;
 let sections;
 let routes;
-let basePath;
+const basePath = "/FleetSnowFluff/";
 
 function getIndex() {
     const currentPath = window.location.pathname.slice(basePath.length);
@@ -19,8 +19,8 @@ async function updateSectionDOM(targetIndex, showLoader = false) {
         route.element.classList.toggle("waiting", isTarget);
 
         if (isTarget) {
-            const finalUrl = `${basePath.replace(/\/+$/, '')}/${targetPath.replace(/^\/+/, '')}`;
-            history.pushState(null, "", finalUrl);
+            const finalPath = `${basePath}${route.path}`;
+            history.pushState(null, "", finalPath);
         }
 
     });
@@ -70,7 +70,6 @@ function canScroll(element) {
 }
 
 export function initRouter() {
-    basePath = window.location.pathname;
     sections = document.querySelectorAll("section");
 
     routes = Array.from(sections).map(el => {

@@ -10,6 +10,7 @@
 @import './sections/chat.css';
 
 /* components */
+@import './components/header.css';
 @import './components/aside.css';
 @import './components/loader.css';
 

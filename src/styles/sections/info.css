@@ -1,11 +1,16 @@
 #info {
-    justify-content: center;
+    padding-left: 2rem;
+}
+
+.info-card {
+    position: absolute;
+    top: calc(100vh / 4);
 }
 
 .main-title {
     font-family: "WuWa Lahai-Roi";
-    font-size: 5rem;
-    color: #f095da;
+    font-size: min(5rem, calc(100vw / 8));
+    color: var(--color-stroke-pink);
 }
 
 /* social links*/

@@ -7,6 +7,7 @@ import { initRouter } from './modules/router.js';
 import { initPostSection } from './modules/renderPost.js';
 import { initWorkSection } from './modules/renderWork.js';
 import { initPlayer } from './modules/player.js';
+import { initSidebar } from './modules/sidebarToggler.js';
 import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
 
 
@@ -19,4 +20,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     initRouter();
     initPlayer();
+    initSidebar();
 });

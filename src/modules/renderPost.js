@@ -26,7 +26,6 @@ function renderPostList(posts) {
             `;
 
         item.addEventListener('click', () => {
-
             renderPostDetail(post, openModal(post));
         });
 

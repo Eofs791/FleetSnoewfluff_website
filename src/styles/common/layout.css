@@ -7,15 +7,29 @@ body {
     height: 100vh;
     font-size: max(calc(100vw / 96), 16px);
     font-family: "FixEllipsis", "Dotted Songti Square", PingFang SC, HarmonyOS_Regular, Helvetica Neue, Microsoft YaHei, sans-serif;
-    overflow-y: hidden;
+    overflow: hidden;
     display: grid;
     grid-template-rows: 2rem 1fr;
     grid-template-columns: 15rem 1fr;
     grid-template-areas:
-        "header1 header2"
+        "aside header"
         "aside  section";
+    transition: grid-template-columns 0.3s ease;
     gap: 0.125rem;
     color: var(--color-stroke-purple);
+}
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2rem 1fr;
+        grid-template-areas:
+            "header"
+            "section";
+        transition: grid-template-columns 0.3s ease;
+    }
 }
 
 * {
@@ -23,6 +37,7 @@ body {
 }
 
 section img,
+aside img,
 header img {
     max-width: 100%;
     height: auto;

@@ -1,31 +1,40 @@
-.header-left {
-    grid-area: header1;
+aside {
+    grid-area: aside;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+
+    aside {
+        position: fixed;
+        top: 0;
+        width: 15rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    aside.active {
+        transform: translateX(0);
+    }
+}
+
+.aside-head {
+    flex: 0 0 auto;
+    height: 2rem;
     background-color: rgb(154, 129, 221);
     box-shadow:
         -0.25rem 0 0 -0.125rem var(--color-stroke-purple), 0.25rem 0 0 -0.125rem var(--color-stroke-purple),
         0 -0.25rem 0 -0.125rem var(--color-stroke-purple), 0 0.25rem 0 -0.125rem var(--color-stroke-purple),
         0 -0.125rem 0 0 var(--color-stroke-purple), 0 0.125rem 0 0 var(--color-stroke-purple),
         -0.125rem 0 0 0 var(--color-stroke-purple), 0.125rem 0 0 0 var(--color-stroke-purple);
-    display: grid;
     align-content: center;
-    justify-content: start;
-    z-index: 5;
 }
 
-.header-right {
-    grid-area: header2;
-    background-color: rgb(154, 129, 221);
-    box-shadow:
-        -0.25rem 0 0 -0.125rem var(--color-stroke-purple), 0.25rem 0 0 -0.125rem var(--color-stroke-purple),
-        0 -0.25rem 0 -0.125rem var(--color-stroke-purple), 0 0.25rem 0 -0.125rem var(--color-stroke-purple),
-        0 -0.125rem 0 0 var(--color-stroke-purple), 0 0.125rem 0 0 var(--color-stroke-purple),
-        -0.125rem 0 0 0 var(--color-stroke-purple), 0.125rem 0 0 0 var(--color-stroke-purple),
-        0.125rem 0.25rem 0 0 var(--color-stroke-purple), 0.25rem 0.375rem 0 0 var(--color-stroke-purple),
-        0.375rem 0.5rem 0 0 var(--color-stroke-purple);
-    z-index: 5;
-}
-
-.header-left .header-btn {
+.aside-head .aside-btn {
     padding: 0.125rem;
     margin-left: 0.3125rem;
     border-color: var(--color-stroke-purple);
@@ -33,20 +42,18 @@
     width: 1.25rem;
 }
 
-aside {
-    grid-area: aside;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
+.aside-main {
+    flex: 1 1 auto;
     box-shadow:
         0.25rem 0.125rem 0 0 var(--color-stroke-purple),
         0.375rem 0.25rem 0 0 var(--color-stroke-purple),
         0.5rem 0.375rem 0 0 var(--color-stroke-purple);
+    background: linear-gradient(to bottom,
+            #ffeef5 0%,
+            #eef6ff 100%);
 }
 
 .avatar-1 {
-    width: 100%;
     height: 10rem;
     box-shadow:
         -0.25rem 0 0 -0.125rem var(--color-stroke-purple), 0.25rem 0 0 -0.125rem var(--color-stroke-purple),
@@ -74,7 +81,7 @@ aside {
             #eef6ff 100%);
 }
 
-.avatar-png {
+.avatar-gif {
     height: 130%;
     transform: translateY(-2.6rem);
 }
